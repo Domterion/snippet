@@ -1,0 +1,28 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.snippets {
+  margin-top: 16px;
+
+  .create {
+    .btn {
+      margin-top: 3px;
+    }
+  }
+
+  .list {
+    ul {
+      li {
+        margin-top: 3px;
+        margin-bottom: 3px;
+      }
+    }
+
+    .btn {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}

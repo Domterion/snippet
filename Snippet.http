@@ -1,0 +1,13 @@
+POST http://127.0.0.1:8080/action
+Content-Type: application/x-www-form-urlencoded
+
+action=create&text=this%20is%20a%20test
+
+###
+
+POST http://127.0.0.1:8080/action
+Content-Type: application/x-www-form-urlencoded
+
+action=delete&id=0
+
+###

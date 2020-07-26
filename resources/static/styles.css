@@ -1,0 +1,19 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.snippets {
+  margin-top: 16px;
+}
+.snippets .create .btn {
+  margin-top: 3px;
+}
+.snippets .list ul li {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.snippets .list .btn:focus {
+  box-shadow: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
