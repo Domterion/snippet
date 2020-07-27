@@ -8,22 +8,22 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
 
     <title>Snippet</title>
 
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
-    <span class="navbar-brand mb-0 h1">Snippet</span>
+    <a class="navbar-brand mb-0 h1" href="/">Snippet</a>
 </nav>
-<div class="container snippets">
+<div class="container-fluid snippets">
     <div class="create">
         <form method="post" action="action">
             <input type="hidden" name="action" value="create"/>
             <label for="textInput">Text</label>
-            <input type="text" id="textInput" name="text" class="form-control" aria-describedby="textHelp">
-            <small id="textHelp" class="form-text text-muted">Add a snippet, note that the character length cant be above 2000.</small>
+            <input type="text" id="textInput" name="text" class="form-control">
             <button type="submit" class="btn btn-dark">Submit</button>
         </form>
     </div>
@@ -34,8 +34,9 @@
                     <input type="hidden" name="id" value="${s.id}"/>
                     <input type="hidden" name="text" value="${s.text}"/>
                     <input type="hidden" name="action" value="delete"/>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">${s.id}. ${s.text}
-                        <small>Created at ${s.created} UTC</small>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><b>${s.id}</b> <span
+                                class="text">${s.text}</span>
+                        <small>${s.created} UTC</small>
                         <button type="submit" title="Delete" class="btn">
                             <i class="material-icons">delete</i>
                         </button>

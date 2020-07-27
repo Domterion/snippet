@@ -2,6 +2,7 @@ package com.snippet.database
 
 import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.insert
+import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
@@ -12,9 +13,16 @@ object Queries {
         }
     }
 
-    fun addSnippet(text: String) {
-        transaction {
-            SnippetTable.insert { it[SnippetTable.text] = text }
+    fun getSnippet(id: Long): Snippet? {
+        return transaction {
+            SnippetTable.select { SnippetTable.id eq id }.map { SnippetTable.toSnippet(it) }.firstOrNull()
+        }
+    }
+
+    fun addSnippet(text: String): Snippet? {
+        return transaction {
+            SnippetTable.insert { it[SnippetTable.text] = text }.resultedValues?.map { SnippetTable.toSnippet(it) }
+                ?.firstOrNull()
         }
     }
 

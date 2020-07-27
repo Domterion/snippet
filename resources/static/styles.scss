@@ -1,3 +1,8 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
 }
@@ -18,11 +23,39 @@ body {
         margin-bottom: 3px;
       }
     }
-
-    .btn {
-      &:focus {
-        box-shadow: none;
-      }
-    }
   }
+}
+
+.snippet {
+  margin-top: 16px;
+  border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.text {
+  word-wrap: break-word;
+  overflow: auto;
+}
+
+.textbox {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  resize: none;
+  border: 0;
+  padding: 16px;
+  color: white;
+}
+
+.navbar-transparent {
+  background-color: transparent;
+}
+
+.btn {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
 }
